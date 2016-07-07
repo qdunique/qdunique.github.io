@@ -13,21 +13,18 @@
 </body>
 <script type="text/javascript">
 $.ajax ({
-	        type : 'GET',
-	        url : "https://api.weixin.qq.com/cgi-bin/token",
-	        data :{
-	            'grant_type' : 'client_credential',
-	            'appid' : 'wx94445cc60bfd8984',
-				'secret':'dae4bdd534eb765f6d14777b343dc982',
-	        },
-	        beforeSend : function () {
-	        },
-	        success : function (data) {
-		        $("#data").html(data);
-	        },
-	        error : function (msg) {
-				$("#msg").html(msg);
-	        }
-	    });
+	type : 'GET',
+	url : "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx94445cc60bfd8984&secret=dae4bdd534eb765f6d14777b343dc982",
+	data :{
+	},
+	beforeSend : function () {
+	},
+	success : function (data) {
+		$("#data").html(data.access_token);
+	},
+	error : function (msg) {
+		$("#msg").html(msg);
+	}
+});
 </script>
 </html>
