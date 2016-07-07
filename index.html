@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>测试首页</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-  </body>
+<html ng-app="ionicApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+<title>Anyprint</title>
+<script src="./js/jquery-3.0.0.js"></script>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+$.ajax ({
+	        type : 'POST',
+	        url : "https://api.weixin.qq.com/cgi-bin/token",
+	        data :{
+	            'grant_type' : 'client_credential',
+	            'appid' : 'wx94445cc60bfd8984',
+				'secret':'dae4bdd534eb765f6d14777b343dc982',
+	        },
+	        dataType : 'json',
+	        timeout : 3000,
+	        cache : false,
+	        beforeSend : function () {
+	        },
+	        success : function (data) {
+		        console.log(data);
+	        },
+	        error : function (msg) {
+	        }
+	    });
+</script>
 </html>
